@@ -24,7 +24,7 @@ export default function FileView(props) {
   const type = file.contentType.split('/')[0];
   const prettySize = `${(file.details.size / 1000000).toFixed(2)} MB`;
   const imgWidth = Math.min(file.details.image.width, IMAGE_WRAPPER_SIZE);
-  const imgHeight = file.details.image.height / (file.details.image.width / imgWidth);
+  const imgHeight = Math.round(file.details.image.height / (file.details.image.width / imgWidth));
 
   return (
     <Dropzone
